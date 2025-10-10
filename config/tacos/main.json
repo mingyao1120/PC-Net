@@ -1,0 +1,58 @@
+{
+  "dataset": {
+    "dataset": "TACoS",
+    "feature_path": "tacos_features_c3d.hdf5",
+    "vocab_size": 1734,
+    "word_dim": 300,
+    "frame_dim": 4096,
+    "max_num_words": 20,
+    "max_num_frames": 200,
+    "target_stride": 1,
+    "train_data": "data/tacos/tacos_train.json",
+    "test_data": "data/tacos/tacos_test.json",
+    "val_data": "data/tacos/tacos_val.json",
+    "vocab_path": "data/tacos/glove.pkl"
+  },
+  "train": {
+    "optimizer": {
+      "lr": 4e-4,
+      "weight_decay": 0,
+      "warmup_updates": 400,
+      "warmup_init_lr": 1e-7
+    },
+    "batch_size": 32,
+    "max_num_epochs": 30,
+    "model_saved_path": "checkpoints/TACoS/"
+  },
+  "model": {
+    "name": "PCNet",
+    "config": {
+      "frames_input_size": 4096,
+      "words_input_size": 300,
+      "hidden_size": 256,
+      "use_negative": true,
+      "num_props": 8,
+      "sigma": 9,
+      "sigma_neg": 4.5,
+      "gamma": 0.5,
+      "dropout": 0.1,
+      "DualTransformer": {
+        "d_model": 256,
+        "num_heads": 8,
+        "num_decoder_layers1": 3,
+        "num_decoder_layers2": 3,
+        "dropout": 0.1
+      }
+    }
+  },
+  "loss": {
+    "margin_1": 0.1,
+    "margin_2": 0.15,
+    "cf_margin_1": 0.1,
+    "cf_margin_2": 0.15,
+    "lambda": 0.133,
+    "alpha_1": 1.5,
+    "alpha_2": 2.5,
+    "inter_lambda": 0.133
+  }
+}

@@ -93,6 +93,17 @@ bash scripts/CharadesSTA.sh
 └── scripts/           # Launch scripts for experiments
 ```
 
+## Citation  
+```
+@inproceedings{
+zhou2025pcnet,
+title={{PC}-Net: Weakly Supervised Compositional Moment Retrieval via Proposal-Centric Network},
+author={Mingyao Zhou and Hao Sun and Wei Xie and Ming Dong and Chengji Wang and Mang Ye},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://openreview.net/forum?id=kQAnOaayIo}
+}
+```
 ---
 
 
